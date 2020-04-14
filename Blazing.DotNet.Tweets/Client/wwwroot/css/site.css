@@ -17,6 +17,14 @@ a, .btn-link {
     border-color: whitesmoke;
 }
 
+.oi-circle-check {
+    color: darkgreen;
+}
+
+.oi-circle-x {
+    color: darkred;
+}
+
 button[disabled] {
     cursor: not-allowed;
 }

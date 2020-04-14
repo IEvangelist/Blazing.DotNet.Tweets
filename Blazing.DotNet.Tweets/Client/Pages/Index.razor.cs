@@ -10,7 +10,7 @@ namespace Blazing.DotNet.Tweets.Client.Pages
 {
     public class IndexComponent : ComponentBase
     {
-        protected string StatusMessage { get; set; }
+        protected string StatusMessage { get; set; } = "Connecting...";
         protected bool IsStreaming { get; set; }
 
         protected bool IsConnected => _hubConnection?.State == HubConnectionState.Connected;

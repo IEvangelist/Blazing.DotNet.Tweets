@@ -10,7 +10,7 @@ namespace Blazing.DotNet.Tweets.Server
         public static Task Main(string[] args) =>
             BuildWebHost(args).RunAsync();
 
-        public static IWebHost BuildWebHost(string[] args) =>
+        static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
                 .UseConfiguration(new ConfigurationBuilder()
                     .AddCommandLine(args)

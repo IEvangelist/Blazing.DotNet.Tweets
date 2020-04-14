@@ -30,6 +30,14 @@
     </div>
     <div class="col-8">
         <div class="alert alert-primary" role="alert">
+            @if (IsConnected)
+            {
+                <span class="oi oi-circle-check" title="circle check" aria-hidden="true"></span>
+            }
+            else
+            {
+                <span class="oi oi-circle-x" title="circle x" aria-hidden="true"></span>
+            }
             <span>@(StatusMessage)</span>
         </div>
     </div>

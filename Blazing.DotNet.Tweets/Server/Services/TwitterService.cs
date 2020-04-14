@@ -208,7 +208,10 @@ namespace Blazing.DotNet.Tweets.Server.Services
 
         async void OnStreamStopped(object sender, StreamExceptionEventArgs args)
         {
-            var status = $"Twitter stream stopped {args.DisconnectMessage}... {args.Exception.Message}";
+            var disconnectMessage = args.DisconnectMessage?.ToString() ?? "no disconnection reason";
+            var errorMessage = args.Exception?.Message ?? "no error (clean stop).";
+
+            var status = $"Twitter stream stopped {disconnectMessage}... {errorMessage}";
             _logger.LogInformation(status);
 
             await SendStatusUpdateAsync(status);
