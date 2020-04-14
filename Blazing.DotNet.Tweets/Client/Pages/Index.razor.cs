@@ -43,6 +43,8 @@ namespace Blazing.DotNet.Tweets.Client.Pages
                 Tweets.Add(tweet);
                 StateHasChanged();
 
+                // We need to tell the Twitter HTML to render correctly.
+                // This is a Twitter thing, not a Blazor thing...
                 JSRuntime.InvokeVoidAsync("nudgeTwitterCard");
             });
 

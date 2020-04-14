@@ -17,6 +17,10 @@ a, .btn-link {
     border-color: whitesmoke;
 }
 
+button[disabled] {
+    cursor: not-allowed;
+}
+
 .badge {
     font-size: 16px;
 }

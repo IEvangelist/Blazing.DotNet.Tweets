@@ -18,13 +18,13 @@ namespace Blazing.DotNet.Tweets.Server.Hubs
         public void AddTracks(ISet<string> tracks) =>
             _twitterService.AddTracks(tracks);
 
-        public Task Start() =>
+        public Task StartStream() =>
             _twitterService.StartTweetStreamAsync();
 
-        public void Pause() =>
+        public void PauseStream() =>
             _twitterService.PauseTweetStream();
 
-        public void Stop() =>
+        public void StopStream() =>
             _twitterService.StopTweetStream();
     }
 }
