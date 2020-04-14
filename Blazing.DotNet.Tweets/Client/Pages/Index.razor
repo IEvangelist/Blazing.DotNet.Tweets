@@ -1,0 +1,48 @@
+﻿@page "/"
+@inherits IndexComponent
+
+<div class="row mb-lg-3">
+    <div class="input-group col-4">
+        <h1 class="text-light">Hashtags and Handles:</h1>
+    </div>
+    <div class="input-group col-8">
+        @foreach (var track in Tracks)
+        {
+            <span class="badge badge-pill p-3 mr-2 mb-2 badge-light clickable"
+                  title="Click to remove '@(track)'." @onclick="(() => RemoveTrack(track))">
+                @track
+            </span>
+        }
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-4">
+        <button id="startButton" class="btn btn-lg btn-light mr-2" @onclick="Start" disabled="@(!IsStreaming)">
+            <span class="oi oi-media-play mr-2"></span> Start
+        </button>
+        <button id="stopButton" class="btn btn-lg btn-light mr-2" @onclick="Stop" disabled="@(IsStreaming)">
+            <span class="oi oi-media-stop mr-2"></span> Stop
+        </button>
+        <button id="pauseButton" class="btn btn-lg btn-light" @onclick="Pause" disabled="@(IsStreaming)">
+            <span class="oi oi-media-pause mr-2"></span> Pause
+        </button>
+    </div>
+    <div class="col-8">
+        <div class="alert alert-primary" role="alert">
+            <span>@(StatusMessage)</span>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-6">
+        <h2 class="text-light">Filtered Tweets</h2>
+        <ul id="tweets" class="reversed no-bullets">
+            @foreach (var tweet in Tweets)
+            {
+                <li>@(new MarkupString(tweet.HTML))</li>
+            }
+        </ul>
+    </div>
+</div>
