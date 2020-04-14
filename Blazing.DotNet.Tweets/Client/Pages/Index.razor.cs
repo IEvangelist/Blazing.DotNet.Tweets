@@ -21,6 +21,7 @@ namespace Blazing.DotNet.Tweets.Client.Pages
             "#SignalR",
             "#BlazoR",
             "#DeveloperCommunity",
+            "@dotnet",
             "@davidpine7"
         };
 
@@ -36,6 +37,7 @@ namespace Blazing.DotNet.Tweets.Client.Pages
         {
             _hubConnection = new HubConnectionBuilder()
                 .WithUrl(NavigationManager.ToAbsoluteUri("/streamHub"))
+                .WithAutomaticReconnect() // here we go!
                 .Build();
 
             _hubConnection.On<TweetResult>("TweetReceived", tweet =>
