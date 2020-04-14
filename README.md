@@ -1,4 +1,4 @@
-This application was written to demonstrate SignalR with Blazor WebAssembly. Enjoy!
+This application was written to demonstrate SignalR with Blazor WebAssembly. It was inspired by the evolution of an earlier project of mine which started with Blazor.Extensions + SignalR, before the .NET client actually worked with Blazor. I later converted the app to no longer rely on Blazor.Extensions but then had to rely on JavaScript, [IEvangelist.BlazoR.TwitterStreaming](https://github.com/IEvangelist/IEvangelist.BlazoR.TwitterStreaming). Now, we're back to a more pure .NET solution... Enjoy!
 
 ![Demos](assets/demo-image.png "Demo")
 
